@@ -121,4 +121,10 @@ describe("gameplay works correctly", () => {
         document.getElementById("button2").click();
         expect(game.lastButton).toEqual("");
     });
+    test("should call an alert if the move is wrong", () => {
+        game.playerMoves.push("wrong");
+        playerTurn();
+        expect(window.alert).toBeCalledWith("Wrong move!");
+        });
+        
 });
